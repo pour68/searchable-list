@@ -5,44 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-        * {
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 1rem 0.5rem;
-        }
-
-        #searchInput {
-            background-image: url("img/searchicon.png");
-            background-position: 10px 10px;
-            background-repeat: no-repeat;
-            width: 100%;
-            font-size: 16px;
-            padding: 12px 20px 12px 40px;
-            border: 1px solid #ddd;
-            margin-bottom: 12px;
-        }
-
-        #searchInput:focus {
-            outline: 2px solid #333;
-        }
-
-        #list {
-            list-style-type: none;
-        }
-
-        #list li {
-            width: 100%;
-            padding: 0.5rem 0;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/main.css" />
     <title>Search list</title>
 </head>
 
@@ -60,28 +23,7 @@
         </ul>
     </div>
 
-    <script>
-        const input = document.getElementById("searchInput");
-
-        const search = () => {
-            let filter, ul, tr, td, i, txtValue;
-            filter = input.value.toUpperCase();
-            ul = document.getElementById("list");
-            li = ul.getElementsByTagName("li");
-            for (i = 0; i < li.length; i++) {
-                if (li) {
-                    txtValue = li[i].textContent || li[i].innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1)
-                        li[i].style.display = "";
-                    else
-                        li[i].style.display = "none";
-                }
-            }
-        }
-
-        input.addEventListener("keyup", () => search());
-    </script>
-
+    <script src="js/main.js"></script>
 </body>
 
 </html>
